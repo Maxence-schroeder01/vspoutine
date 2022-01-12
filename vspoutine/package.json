@@ -1,0 +1,81 @@
+{
+    "name": "vspoutine",
+    "displayName": "VSPoutine",
+    "description": "Order Poutine from within VS Code.",
+    "icon": "img/poutine.png",
+    "version": "0.0.1",
+    "publisher": "Maxence-Schroeder01",
+    "engines": {
+        "vscode": "^1.18.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "license": "MIT",
+    "keywords": [
+      "order poutine vspoutine"
+    ],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/Maxence-schroeder01/vspoutine"
+    },
+    "homepage": "https://github.com/Maxence-schroeder01/vspoutine",
+    "bugs": {
+      "url": "https://github.com/Maxence-schroeder01/vspoutine/issues"
+    },
+    "activationEvents": [
+        "onCommand:extension.orderPoutine"
+    ],
+    "main": "./extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.orderPoutine",
+                "title": "Order a Poutine"
+            }
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "VSPoutine Configuration",
+            "properties": {
+              "vspoutine.customPoutine": {
+                "type": "string",
+                "description": "Specify the URL to your favourite poutine address.",
+                "default": "https://cheffredpoutinerie.com/menu/"
+              }
+            }
+        },
+        "keybindings": [
+            {
+              "command": "extension.orderPoutine",
+              "key": "ctrl+f2",
+              "mac": "cmd+f2"
+            }
+        ],
+        "menus": {
+            "editor/context": [
+              {
+                "command": "extension.orderPoutine",
+                "group": "navigation@1"
+              }
+            ],
+            "explorer/context": [
+                {
+                  "command": "extension.orderPoutine",
+                  "group": "navigation@1"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "eslint": "^4.6.1",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    }
+}
