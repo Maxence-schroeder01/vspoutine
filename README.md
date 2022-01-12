@@ -29,5 +29,5 @@ This extension contributes the following settings:
 Initial release of VS Poutine
 
 -----------------------------------------------------------------------------------------------------------
-
+https://marketplace.visualstudio.com/items?itemName=Maxence-Schroeder01.vspoutine
 **Have a nice Day!**
